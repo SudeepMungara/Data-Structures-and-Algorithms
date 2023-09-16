@@ -27,8 +27,7 @@ def partition(arr,first_index,last_index):
     
 if __name__ == '__main__':
 
-    # arr = [int(x) for x in input("Enter multiple values: ").split()]
-    arr = [22, 44, 11, 22, 5, 66, 99]
+    arr = [int(x) for x in input("Enter multiple values: ").split()]
     first = 0
     last = len(arr)-1
     quick_sort(arr,first,last)
