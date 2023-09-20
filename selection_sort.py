@@ -8,3 +8,8 @@ def selection_sort(arr):
         arr[i],arr[min_idx] = arr[min_idx],arr[i]
     return arr
 
+if __name__ == '__main__':
+    
+    arr = [int(x) for x in input("Enter multiple values: ").split()]
+    selection_sort(arr)
+    
