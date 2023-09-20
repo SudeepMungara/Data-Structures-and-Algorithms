@@ -5,3 +5,8 @@ def bubble_sort(arr):
             if arr[j]<arr[j-1]:
                 arr[j],arr[j-1] = arr[j-1],arr[j]
     return arr
+    
+if __name__ == '__main__':
+    
+    arr = [int(x) for x in input("Enter multiple values: ").split()]
+    bubble_sort(arr)
