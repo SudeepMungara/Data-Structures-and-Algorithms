@@ -10,3 +10,7 @@ def insertion_sort(arr):
         arr[j+1] = key
         
     return arr
+if __name__ == '__main__':
+    
+    arr = [int(x) for x in input("Enter multiple values: ").split()]
+    bubble_sort(arr)
