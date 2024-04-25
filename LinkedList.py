@@ -59,9 +59,6 @@ class LinkedList:
         if idx==0:
             self.insertAtStart(new_data)
             return
-        elif idx == self.lengthOfLinkedList()-1:
-            self.insertAtEnd(new_data)
-            return
         
         itr = self.head
         count = 0
