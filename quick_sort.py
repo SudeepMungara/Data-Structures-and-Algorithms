@@ -1,34 +1,24 @@
-def quick_sort(arr,first_index,last_index):
-    if first_index<last_index:
-        parition_pos = partition(arr,first_index,last_index)
-        quick_sort(arr,first_index,parition_pos-1)
-        quick_sort(arr,parition_pos+1,last_index)
+def quicksort(arr,low,high):
+    if low<high:
+        p = partition(arr,low,high)
+        quicksort(arr,low,p-1)
+        quicksort(arr,p+1,high)
+   
+def partition(arr,low,high):
     
-def partition(arr,first_index,last_index):
-    
-    i = first_index
-    j = last_index-1
-    pivot = arr[last_index]
-    
-    while i<j:
-        while arr[i] < pivot and i<last_index:
+    pivot = arr[high]
+    i = low-1
+    for j in range(low,high):
+        if arr[j]<=pivot:
             i+=1
-            
-        while arr[j] >= pivot and j>first_index:
-            j-=1
-            
-        if i<j:
             arr[i],arr[j] = arr[j],arr[i]
-            
-    if arr[i] > pivot:
-        arr[i],arr[last_index] = arr[last_index],arr[i]
-        
-    return i
+        arr[i+1],arr[high] = arr[high],arr[i+1]
+    return i+1
     
 if __name__ == '__main__':
 
     arr = [int(x) for x in input("Enter multiple values: ").split()]
-    first = 0
-    last = len(arr)-1
-    quick_sort(arr,first,last)
+    low = 0
+    high = len(arr)-1
+    quick_sort(arr,low,high)
     print(arr)
